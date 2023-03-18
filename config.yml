@@ -1,0 +1,204 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "Orion Dashboard @ Ricos"
+subtitle: "version 2.11"
+documentTitle: "Portal v 2.11" # Customize the browser tab text
+#logo: "assets/logo.png"
+# Alternatively a fa icon can be provided:
+#icon: "fas fa-tachometer-alt"
+#header: true # Set to false to hide the header
+footer: false
+columns: "4" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
+
+# Optional theming
+theme: default # 'default' or one of the themes available in 'src/assets/themes'.
+
+# Optional custom stylesheet
+# Will load custom CSS files. Especially useful for custom icon sets.
+# stylesheet:
+#   - "assets/custom.css"
+
+# Here is the exhaustive list of customization parameters
+# However all value are optional and will fallback to default if not set.
+# if you want to change only some of the colors, feel free to remove all unused key.
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#424242"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link-hover: "#363636"
+ #   background-image: "assets/your/light/bg.png"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link-hover: "#ffdd57"
+   # background-image: "assets/your/dark/bg.png"
+
+# Optional message
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "orion.gr"
+    icon: "fab fa-wordpress"
+    url: "https://www.orion.gr"
+    target: "_blank" # optional html tag target attribute
+  - name: "chatzikostas.eu"
+    icon: "fab fa-wordpress"
+    url: "https://www.chatzikostas.eu"
+  - name: "angeloscha"
+    icon: "fab fa-github"
+    url: "https://github.com/angeloschat/"
+  # this will link to a second homer page that will load config from page2.yml and keep default config values as in config.yml file
+  # see url field and assets/page.yml used in this example:
+  - name: "Links"
+    icon: "fas fa-external-link-square-alt"
+    url: "#page"
+
+# Services
+# First level array represents a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Servers"
+    icon: "fas fa-server"
+    items:
+      - name: "Pi-hole Pepino"
+        logo: "assets/tools/pihole.svg"
+        tag: "Pi"
+        url: "http://pepino.orion.home/admin"
+        type: "PiHole" 
+        target: "_new"
+      - name: "Pi-hole nano"
+        logo: "assets/tools/pihole.svg"
+        tag: "Pi"
+        url: "http://nano.orion.home/admin"
+        type: "PiHole" 
+        target: "_new"
+      - name: "Ricos"
+        logo: "assets/tools/openmediavault.png"
+        url: "http://ricos.orion.home:8081"
+        subtitle: "Openmediavault"
+        tag: "OMV"
+        target: "_new"
+      - name: "Nano"
+        logo: "assets/tools/openmediavault.png"
+        url: "http://nano.orion.home:8080"
+        subtitle: "Openmediavault 6"
+        tag: "OMV"
+        target: "_new"
+      - name: "Pepino"
+        logo: "assets/tools/openmediavault.png"
+        url: "http://pepino.orion.home:81"
+        subtitle: "Openmediavault 6"
+        tag: "OMV"
+        target: "_new"
+      - name: "Portainer Ricos"
+        logo: "assets/tools/portainer.png"
+        url: "https://ricos.orion.home:9443"
+        tag: "Docker"
+        target: "_new"
+        type: "Portainer"
+        apikey: ptr_c6Z5JZ3iEL760p70vzy7il1sRyaFxaApL+kzA0XMBac=
+  - name: "Local Network"
+    icon: "fas fa-network-wired"
+    items:
+      - name: "Router"
+        icon: "fas fa-network-wired"
+        url: "http://gw.orion.home" 
+      - name: "S685IP"
+        logo: "assets/tools/gigaset.png"
+        url: "http://giga.orion.home"
+        subtitle: "VoIP"
+      - name: "Switch"
+        logo: "assets/tools/mikrotik.png"
+        url: "http://sw.orion.home"
+      - name: "NPM"
+        logo: "assets/tools/npm.png"
+        url: "http://pepino.orion.home:83"
+        tag: "Proxy"
+        target: "_new"
+      - name: "Unifi"
+        logo: "assets/tools/unifi.png"
+        url: "https://pepino.orion.home:8443"
+        tag: "WiFi Controler"
+        target: "_new"   
+      - name: "Printer"
+        logo: "assets/tools/epson2.png"
+        url: "http://printer.orion.home"
+        target: "_new"            
+  - name: "Media"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Sickchill"
+        logo: "assets/tools/sickchill.png"
+        tag: "Torrents"
+        url: "https://orion-sickrage.cloud.seedboxes.cc/home/"
+        target: "_new"
+      - name: "Rutorrent"
+        logo: "assets/tools/rutorrent.png"
+        tag: "Torrents"
+        url: "https://orion.cloud.seedboxes.cc/rutorrent/"
+        target: "_new"
+      - name: "Volumio"
+        logo: "assets/tools/volumio.png"
+        url: "http://onesound.orion.home" 
+        subtitle: "onesound player"
+        tag: "Pi"
+        target: "_new"
+      - name: "Volumio"
+        logo: "assets/tools/volumio.png"
+        url: "http://kitchen.orion.home" 
+        subtitle: "kitchen player"
+        tag: "Pi"
+        target: "_new"
+      - name: "TNAS"
+        logo: "assets/tools/svg/Terramaster.svg"
+        url: "http://tnas-4844.local:8181" 
+        subtitle: "Terramaster NAS"
+        tag: "NAS"
+        target: "_new"
+  - name: "Cloud"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Hetzner"
+        logo: "assets/tools/cloud.svg"
+        url: "https://console.hetzner.cloud"
+        target: "_new"
+      - name: "Ionos"
+        icon: "fas fa-server"
+        url: "https://my.ionos.es"
+        target: "_new"
+      - name: "Vultr"
+        logo: "assets/tools/vultr.svg"
+        url: "https://my.vultr.com/"
+        target: "_new"
+      - name: "Cloudflare"
+        icon: "fab fa-cloudflare"
+        url: "https://dash.cloudflare.com/login"
+        target: "_new"
+      - name: "Azure"
+        logo: "assets/tools/azure.png"
+        url: "https://portal.azure.com/"
+        target: "_new"
+      - name: "Contabo"
+        logo: "assets/tools/svg/contabo-logo.svg"
+        url: "https://my.contabo.com"
+        target: "_new"
